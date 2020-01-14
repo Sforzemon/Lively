@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Its a band page">
+  <meta name="author" content="Michael">
+
+  <title>Lively/Band Info</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Custom styles for this template-->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <a class="navbar-brand mr-1" href="index.html">Lively</a>
+    </button>
+
+    <!-- Navbar Search -->
+    <form class="d-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Pick a band..." aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-light" type="button"> <!--retrieve local storage each band should be a button to initialize search-->
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    
+
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav d-none d-md-block ">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="favoritesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-heart"></i>
+          <span>Favorites</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="favoritesDropdown">
+          <h6 class="dropdown-header">Favorite Bands:</h6>
+          <a class="dropdown-item">AC DC</a>
+        </div>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Icon Cards-->
+        <div class="row">
+          <div class="col-12 col-md-4 mb-3">
+            <div class="card o-hidden h-100" id="bgGold">
+              <div class="card-body">sdfsf
+                <div class="card-body-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="mr-5"></div>
+              </div>
+              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+                <span class="float-left">Most Played Track!</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="card o-hidden h-100" id="bgSilver">
+              <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="mr-5"></div>
+              </div>
+              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+                <span class="float-left">A Close Second.</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="card o-hidden h-100" id="bgBronze">
+              <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="mr-5"></div>
+              </div>
+              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+                <span class="float-left">A Distant Third...</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+         
+          
+
+        <!-- Band Info-->
+        <div class="row"></div>
+        <div class="card mb-3 mx-auto mt-3 col-10">
+          <div class="card-header" id="bandName">
+            <i class="fas fa-info-circle"></i>
+            (Place holder text)
+            <button class="btn btn-outline-dark rounded-circle" type="button"> <!--Program save to local Storage-->
+                <i class="fas fa-heart"></i>
+              </button>
+        </div>
+          <div class="card-body">
+            <canvas id="bandBio" width="100%" height="50"></canvas>
+          </div>
+          <div class="card-footer small text-muted">Check out a video</div> <!-- program modal with embedded youtube clip here-->
+        </div> 
+
+        </div><!--container-fluid-->
+      </div><!--container-wrapper-->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © 2019</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+
+
+<!-- Optional JavaScript -->
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="https://kit.fontawesome.com/ea4f288c58.js" crossorigin="anonymous"></script>
+<script src="assets/js/moment.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
