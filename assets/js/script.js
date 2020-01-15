@@ -37,7 +37,7 @@ $( document ).ready(function() {
             }
             $("#bandName").text(recentSearch.bandName);
             $("#bandBio").append($("<p>", {id: "bandSummary"}));
-            var editedBio = response.artist.bio..slice(0,-68)
+            var editedBio = response.artist.bio.slice(0,-68)
             $("#bandSummary").text(editedBio);
             console.log(response.artist.name)
             console.log(response.artist.bio.content.slice(0,-68))
