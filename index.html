@@ -19,7 +19,8 @@
 
 <body id="page-top">
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="index.html">Lively</a>
+    <a class="navbar-brand mr-1" href="index.html"><img src="assets/images/audio.png" style="width:25px;height:25px;">  Lively</a>
+    <!--Headphone icon reference. <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
     </button>
 
     <!-- Navbar Search -->
@@ -123,11 +124,98 @@
           <div class="card-body">
             <canvas id="bandBio" width="100%" height="50"></canvas>
           </div>
-          <div class="card-footer small text-muted">Check out a video</div> <!-- program modal with embedded youtube clip here-->
-        </div> 
+          <div id="youtube-url" class="card-footer small text-muted"><img src= "assets/images/multimedia.png" style="width:25px;height:25px;">Check out a video 
+              <div id="social-media-url" class="rounded-social-buttons">
+              <a class="social-button facebook" href="#"></a>
+              <a class="social-button twitter" href="#"></a>
+              <a id="youtube-left" class="social-button youtube" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s" href="#">
+              </a>
+              <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <div>
+                                         <iframe width="100%" height="350" src=""></iframe>
+                                      </div>
+                           </div>
+                      </div>
+                  </div>
+              </div> 
+              <a class="social-button instagram" href="#"></a>
+              
+            </div>
+          </div> 
+<!--reference for the Youtube icon. Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
 
+      <!-- program modal with embedded youtube clip here-->
+
+     
+
+                 
+    </div> 
+
+        <!--Similar-Artist-->
+        
+        
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Icon Cards-->
+        <div class="row">
+          <div class="col-12 col-md-4 mb-3">
+            <div class="card o-hidden h-100" id="bg1">
+              <div class="card-body">sdfsf
+                <div class="card-body-icon">
+                  <i class="far fa-user"></i>
+                </div>
+                <div class="mr-5"></div>
+              </div>
+              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+                <span class="float-left">Who are you guys?</span>
+                <span class="float-right">
+                  <i class="far fa-user"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="card o-hidden h-100" id="bg2">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="far fa-user"></i>
+                </div>
+                <div class="mr-5"></div>
+              </div>
+              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+                <span class="float-left">We're like the same!</span>
+                <span class="float-right">
+                  <i class="far fa-user"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="card o-hidden h-100" id="bg3">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="far fa-user"></i>
+                </div>
+                <div class="mr-5"></div>
+              </div>
+              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+                <span class="float-left">I'm just as cool as you guys!</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
         </div><!--container-fluid-->
       </div><!--container-wrapper-->
+
+      
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
@@ -154,6 +242,12 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+
+<!-- Compressed JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
