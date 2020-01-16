@@ -56,6 +56,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
+h1 {
+  font-size: 3rem !important;
+}
+h3 {
+  font-size: 2rem !important;
+}
 
 p {
   margin-top: 0;
@@ -190,7 +196,7 @@ body {
     margin: 0 1rem;
     top: 0;
   }
-  .sidebar .nav-item.dropdown .dropdown-toggle::after {
+  .sidebar .nav-item.dropdown .dropdown-toggle {
     display: block;
   }
   .sidebar.toggled {
@@ -253,6 +259,11 @@ footer.sticky-footer .copyright {
   line-height: 2;
   font-size: 0.8rem;
 }
+#brandLogo {
+  height: 50px;
+  width: 50px;
+  vertical-align: top;
+}
 
 #bgGold {
   background-color: #ffd700;
@@ -278,6 +289,17 @@ footer.sticky-footer .copyright {
   display: inline-block;
   overflow: auto;
 }
+#topNavSearch {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: #343a40 solid 1px;
+}
+
+
+
+
+
+
 
 
 /* Start of Foundation Framework buttons */

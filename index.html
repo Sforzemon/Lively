@@ -19,14 +19,14 @@
 
 <body id="page-top">
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="index.html"><img src="assets/images/audio.png" style="width:25px;height:25px;">  Lively</a>
+    <a class="navbar-brand mr-1" href="index.html"><img src="assets/images/audio.png" class="h-40 w-40 " id="brandLogo">     <h1 class="d-inline-block">Lively</h1></a>
     <!--Headphone icon reference. <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
     </button>
 
     <!-- Navbar Search -->
-    <form class="d-inline-block form-inline ml-auto mr-3 align-middle">
+    <form class="d-inline-block form-inline ml-auto mr-3 mt-3 align-middle">
       <div class="input-group">
-        <input type="text" id="getArtistName" class="form-control" placeholder="Pick a band..." aria-label="Search" aria-describedby="basic-addon2">
+        <input type="text" id="getArtistName" class="form-control rounded-left" placeholder="Pick a band..." aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
           <button id="topNavSearch" class="btn btn-outline-light" type="button"> <!--retrieve local storage each band should be a button to initialize search-->
             <i class="fas fa-search"></i>
@@ -57,11 +57,11 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-        <h3>Top Tracks</h3>
+        <h3 class="text-center text-md-left">Top Tracks</h3>
         <!-- Icon Cards-->
         <div class="row">
           <div class="col-12 col-md-4 mb-3">
-            <div class="card o-hidden h-100" id="bgGold">
+            <div class="card rounded o-hidden h-100" id="bgGold">
               <div class="card-body">
                 <div class=" oneTrack">sdfsfsklfjhlskjhflksjhsdflkasjhfkjsbkjaksljdfhlksjhflkjbsalkjfhglksjgblkjBGKJbflfjdb</div>
                 <div class="card-body-icon z-2">
@@ -101,7 +101,7 @@
             </div>
           </div>
           <div class="col-12 col-md-4 mb-3">
-            <div class="card o-hidden h-100" id="bgSilver">
+            <div class="card rounded o-hidden h-100" id="bgSilver">
               <div class="card-body">
                 <div class="twoTrack"></div>
                 <div class="card-body-icon">
@@ -141,7 +141,7 @@
             </div>
           </div>
           <div class="col-12 col-md-4 mb-3">
-            <div class="card o-hidden h-100" id="bgBronze">
+            <div class="card rounded o-hidden h-100" id="bgBronze">
               <div class="card-body">
                 <div class="threeTrack"></div>
                 <div class="card-body-icon">
@@ -185,7 +185,7 @@
 
         <!-- Band Info-->
         <div class="row"></div>
-        <div class="card mb-3 mx-auto mt-3 col-10 px-0">
+        <div class="card rounded mb-3 mx-auto mt-3 col-10 px-0">
           <div class="card-header" id="bandName">
             <button class="btn btn-outline-dark rounded-circle mr-3 d-inline-top" type="button"> <!--Program save to local Storage-->
               <i class="fas fa-heart"></i>
@@ -237,55 +237,49 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-        <h3>Similar Artists</h3>
+        <h3 class="text-center text-md-left">Similar Artists</h3>
         <!-- Icon Cards-->
         <div class="row">
           <div class="col-12 col-md-4 mb-3">
-            <div class="card o-hidden h-100" id="bg1">
-              <div class="card-body">sdfsf
+            <div class="card rounded-pill o-hidden h-100" id="bg1">
+              <div class="card-body">
+                <div class="similarArtistOne"></div>
                 <div class="card-body-icon">
                   <i class="far fa-user"></i>
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
-                <span class="float-left">Who are you guys?</span>
-                <span class="float-right">
-                  <i class="far fa-user"></i>
-                </span>
-              </a>
+              <button class="btn card-footer text-black clearfix small z-1" href="#">
+                <span class="text-center">Check us out!</span>
+              </button>
             </div>
           </div>
           <div class="col-12 col-md-4 mb-3">
-            <div class="card o-hidden h-100" id="bg2">
+            <div class="card rounded-pill o-hidden h-100" id="bg2">
               <div class="card-body">
                 <div class="card-body-icon">
+                  <div class="similarArtistOne"></div>
                   <i class="far fa-user"></i>
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
-                <span class="float-left">We're like the same!</span>
-                <span class="float-right">
-                  <i class="far fa-user"></i>
-                </span>
-              </a>
+              <button class="btn card-footer text-black clearfix small z-1" href="#">
+                <span class="text-center">Check us out!</span>
+              </button>
             </div>
           </div>
           <div class="col-12 col-md-4 mb-3">
-            <div class="card o-hidden h-100" id="bg3">
+            <div class="card rounded-pill o-hidden h-100" id="bg3">
               <div class="card-body">
                 <div class="card-body-icon">
+                  <div class="similarArtistOne"></div>
                   <i class="far fa-user"></i>
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
-                <span class="float-left">I'm just as cool as you guys!</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
+              <button class="btn card-footer text-black clearfix small z-1" href="#">
+                <span class="text-center">Check us out!</span>
+              </button>
             </div>
           </div>
 
@@ -300,8 +294,8 @@
           </div>
         </div>
       </footer>
-    </div><!--container-fluid-->
-  </div><!--container-wrapper-->
+    </div><!--/container-fluid-->
+  </div><!--/container-wrapper-->
     </div>
     <!-- /.content-wrapper -->
 
