@@ -36,17 +36,15 @@ $( document ).ready(function() {
                 bandName: response.artist.name,
                 id: response.artist.stats.listeners
             }
-            $("#bandName").text(recentSearch.bandName);
-            $("#bandBio").append($("<p>", {id: "bandSummary"}));
-            var editedBio = response.artist.bio.slice(0,-68)
-            $("#bandSummary").text(editedBio);
+            $("h4").remove();
+            var theBand = $("<h4>", {"class": "ml-2 d-inline-block my-auto"});
+           
+            $("#bandName").append(theBand)
+            theBand.empty()
+            theBand.text(recentSearch.bandName);
+            $("#bandBio").text(response.artist.bio.content)
             console.log(response.artist.name)
-            console.log(response.artist.bio.content.slice(0,-68))
-
-            
-
-
-
+            console.log(response.artist.bio.content)
         });
     };
 });

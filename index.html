@@ -115,19 +115,17 @@
         <div class="row"></div>
         <div class="card mb-3 mx-auto mt-3 col-10">
           <div class="card-header" id="bandName">
-            <i class="fas fa-info-circle"></i>
-            (Place holder text)
-            <button class="btn btn-outline-dark rounded-circle" type="button"> <!--Program save to local Storage-->
-                <i class="fas fa-heart"></i>
-              </button>
+            <button class="btn btn-outline-dark rounded-circle mr-3 d-inline-top" type="button"> <!--Program save to local Storage-->
+              <i class="fas fa-heart"></i>
+            </button>
         </div>
-          <div class="card-body"><div type="text" class="form-control" style="display: inline-block;overflow: auto;">
-        </div>
+        
+          <div class="card-body">
+            <textarea rows="8" disabled="disabled" id="bandBio" class="form-control">
+        </textarea>
           </div>
-          <div id="youtube-url" class="card-footer small text-muted"><img src= "assets/images/multimedia.png" style="width:25px;height:25px;">Check out a video 
-              <div id="social-media-url" class="rounded-social-buttons">
-              <a class="social-button facebook" href="#"></a>
-              <a class="social-button twitter" href="#"></a>
+          <div class="card-footer small text-muted">
+            <div id="social-media-url-left" class="rounded-social-buttons">
               <a id="youtube-left" class="social-button youtube" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s" href="#">
               </a>
               <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
@@ -142,6 +140,12 @@
                       </div>
                   </div>
               </div> 
+            </div>
+              
+            <div id="social-media-url" class="rounded-social-buttons">
+              <a class="social-button facebook" href="#"></a>
+              <a class="social-button twitter" href="#"></a>
+              
               <a class="social-button instagram" href="#"></a>
               
             </div>
