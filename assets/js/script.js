@@ -104,25 +104,26 @@ $( document ).ready(function() {
                         $("#topAlbum").attr("src", albumImg)
                         console.log(albumImg)
                         // document.querySelector("#kvov2 > span.blockInner > span:nth-child(3) > span.blockInner > span:nth-child(1) > span.s > span > a")
-                                                    // $.ajax({
-                                                    //     url: tasteURL,
-                                                    //     headers: {
-                                                    //         "Access-Control-Allow-Origin": '*' 
-                                                    //     },
-                                                    //     method: "GET"
-                                                    // }).then(
-                                                    //     $.ajax({
-                                                    //         url: tasteURL,
-                                                    //         method: "GET"
-                                                    //     }).then(function(response) {
-                                                    //         var similarArtistOne = response.Similar.Results[0].Name;
-                                                    //         var similarArtistTwo = response.Similar.Results[1].Name;
-                                                    //         var similarArtistThree = response.Similar.Results[2].Name;
-                                                    //         var mainSearchArtistYURL = response.Similar.Info[0].yUrl;
-                                                    //            $("#youtube-left").attr("data-theVideo", "mainSearchArtistYURL");
-                                                    //         console.log(response.Similar)
+                                                    $.ajax({
+                                                        url: tasteURL,
+                                                        crossOrigin: true,
+                                                        dataType: "jsonp",
+                                                        method: "GET"
+                                                    }).then(
+                                                        $.ajax({
+                                                            url: tasteURL,
+                                                            crossOrigin: true,
+                                                        dataType: "jsonp",
+                                                            method: "GET"
+                                                        }).then(function(response) {
+                                                            var similarArtistOne = response.Similar.Results[0].Name;
+                                                            var similarArtistTwo = response.Similar.Results[1].Name;
+                                                            var similarArtistThree = response.Similar.Results[2].Name;
+                                                            var mainSearchArtistYURL = response.Similar.Info[0].yUrl;
+                                                               $("#youtube-left").attr("data-theVideo", "mainSearchArtistYURL");
+                                                            console.log(response.Similar)
 
-                                                    //     }));
+                                                        }));
                 
                 });
             });
