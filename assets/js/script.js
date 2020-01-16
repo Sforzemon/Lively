@@ -1,11 +1,17 @@
 
 $( document ).ready(function() {
-    
     var artistName = "";
     var savedSearches = [];
+
+    function setArtist(){
+        artistSaved = JSON.parse(localStorage.setItem('#getArtistName'))
+    }
+    function localeGet(){
         if (localStorage.getItem('savedSearches') !== null) {
             savedSearches = JSON.parse(localStorage.getItem('savedSearches'));  
         } 
+    }
+        
     
 
     $(document).on('keypress',function(event) {
@@ -13,65 +19,46 @@ $( document ).ready(function() {
             event.preventDefault();
             artistName = $("#getArtistName").val().trim();
             getBand();
+            setArtist();
+            localeGet();
         }
     });
+
     $("#topNavSearch").on("click", function(event) {
         event.preventDefault();
         artistName = $("#getArtistName").val().trim();
         getBand();
+        getGiphy();
     });
-
-    $("#loveThisBand").on("click", function(e) {
-        e.preventDefault();
-        myFavorites()
-    });
-
-
     // function myFavorites() {
-    //     var loveTheseGuys = $("#bandName").text
-    //     var favoriteBands = {
-    //         name: loveTheseGuys,
-    //         value: ""
-    //     }
-    //     console.log(loveTheseGuys)
-    //     console.log(favoriteBands)
-    //     savedSearches.unshift(favoriteBands)
+
+    //     savedSearches.unshift(recentSearch)
     //     localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
-    //     $(".dropdown-header").empty();
-    //     for (i=0; i<savedSearches.length; i++) {
-    //         var newAnchor = $("<a>", {"class": "dropdown-item"})
-    //         $(".dropdown-header").append(newAnchor);
-    //         newAnchor.text(savedSearches[i]);
-    //     }
     // }
 
 
 
     function getBand() {
-        var lastFMURLbio = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        
-        var lastFMURLTopTracks = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
-        var lastFMURLTopAlbum = "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
-        var tasteURL = "https://tastedive.com/api/similar?q=" + artistName + "&k=353205-Lively-TT1A0QYZ&verbose=1"
+        var lastFMURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        
         $.ajax({
-            url: lastFMURLbio,
+            url: lastFMURL,
             method: "GET"
         }).then(function(response) {
-            $("h4").remove();
-            var theBand = $("<h4>", {"class": "ml-2 d-inline-block my-auto"});
-            $("#bandName").append(theBand)
-            theBand.empty()
-            theBand.text(response.artist.name);
-            var bandBioTest = response.artist.bio.content;
-            bandBioTest = bandBioTest.split(', C')[0];
-            console.log(bandBioTest)
-            if (bandBioTest === "WRONG NAME") {
-                bandBioTest = "Sorry, this artist is lacking an up to date Bio."
-                $("#bandBio").text(bandBioTest)
+            var recentSearch = {
+                bandName: response.artist.name,
+                id: response.artist.stats.listeners
             }
-            else {
-                $("#bandBio").text(response.artist.bio.content);
-            }
+
+            $("#bandName").text(recentSearch.bandName);
+
+            $("#bandBio").append($("<p>", {id: "bandSummary"}));
+
+            var editedBio = response.artist.bio.slice(0,-68)
+
+            $("#bandSummary").text(editedBio);
+
             console.log(response.artist.name);
+<<<<<<< HEAD
             console.log(response.artist.bio.content);
             $.ajax({
                 url: lastFMURLTopTracks,
@@ -127,10 +114,32 @@ $( document ).ready(function() {
                 
                 });
             });
+=======
+
+            console.log(response.artist.bio.content.slice(0,-68));
+
+            
+            
+
+
+
+>>>>>>> 679aeb58008b150eeea722ac0922fce31f61f5b4
         });
-    });
-};
+    };
 });
+
+function getGiphy(){
+    artistName = $("#getArtistName").val().trim();
+    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=UyP7yHq6GHhRpGn3p7vtXmNOnjY2UMXT";
+    $.ajax({
+        url: giphyURL,
+        method: "GET"
+    }).then(function(data){
+       
+        console.log(data);
+        
+    })
+}
 
 autoPlayYouTubeModal();
 
