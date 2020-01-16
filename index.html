@@ -33,13 +33,13 @@
           </button>
         </div>
       </div>
+     
     </form>
     
 
   </nav>
 
   <div id="wrapper">
-
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav d-none d-md-block ml-0">
       <li class="nav-item dropdown">
@@ -52,7 +52,9 @@
           <a class="dropdown-item">AC DC</a>
         </div>
       </li>
+      
     </ul>
+
 
     <div id="content-wrapper">
 
@@ -63,18 +65,18 @@
           <div class="col-12 col-md-4 mb-3">
             <div class="card rounded o-hidden h-100" id="bgGold">
               <div class="card-body">
-                <div class=" oneTrack">sdfsfsklfjhlskjhflksjhsdflkasjhfkjsbkjaksljdfhlksjhflkjbsalkjfhglksjgblkjBGKJbflfjdb</div>
+                <div class=" oneTrack"></div>
                 <div class="card-body-icon z-2">
                     <i class="fas fa-trophy"></i>
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer clearfix small z-1" href="#goldModal" data-toggle="modal"><!--Make a modal here-->
+              <button class="btn card-footer clearfix small z-1" href="#goldModal" data-toggle="modal"><!--Make a modal here-->
                 <span class="float-left">Most Played Track!</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
-              </a>
+              </button>
                   <div class="modal fade" id="goldModal">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -86,9 +88,9 @@
                         </div>
                         
                         <!-- Modal body -->
-                        <div class="modal-body oneScrobble">
-                          Modal body..
-                        </div>
+                        <h2 class="modal-body oneScrobble text-center">
+                         
+                        </h2>
                         
                         <!-- Modal footer -->
                         <div class="modal-footer">
@@ -109,12 +111,12 @@
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer clearfix small z-1" href="#silverModal" data-toggle="modal"><!--Make a modal here-->
+              <button class="btn card-footer clearfix small z-1" href="#silverModal" data-toggle="modal"><!--Make a modal here-->
                 <span class="float-left">A Close Second.</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
-              </a>
+              </button>
               <div class="modal fade" id="silverModal">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -126,9 +128,9 @@
                     </div>
                     
                     <!-- Modal body -->
-                    <div class="modal-body twoScrobble">
+                    <h2 class="modal-body twoScrobble text-center">
                       Modal body..
-                    </div>
+                    </h2>
                     
                     <!-- Modal footer -->
                     <div class="modal-footer">
@@ -149,12 +151,12 @@
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer clearfix small z-1" href="#bronzeModal" data-toggle="modal"><!--Make a modal here-->
+              <button class="btn card-footer clearfix small z-1" href="#bronzeModal" data-toggle="modal"><!--Make a modal here-->
                 <span class="float-left Scrobble">A Distant Third...</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
-              </a>
+              </button>
               <div class="modal fade" id="bronzeModal">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -166,9 +168,9 @@
                     </div>
                     
                     <!-- Modal body -->
-                    <div class="modal-body threeScrobble">
+                    <h3 class="modal-body threeScrobble text-center">
                       Modal body..
-                    </div>
+                    </h3>
                     
                     <!-- Modal footer -->
                     <div class="modal-footer">
@@ -186,10 +188,12 @@
         <!-- Band Info-->
         <div class="row"></div>
         <div class="card rounded mb-3 mx-auto mt-3 col-10 px-0">
-          <div class="card-header" id="bandName">
-            <button class="btn btn-outline-dark rounded-circle mr-3 d-inline-top" type="button"> <!--Program save to local Storage-->
+          
+            <div class="card-header">
+            <button class="btn btn-outline-dark rounded-circle mr-3 d-inline-top" type="button" id="loveThisBand"> <!--Program save to local Storage-->
               <i class="fas fa-heart"></i>
             </button>
+            <div class="d-inline" id="bandName"></div>
         </div>
         
           <div class="card-body">
@@ -197,8 +201,8 @@
         </textarea>
           </div>
           <div class="card-footer small text-muted">
-            <div id="social-media-url-left" class="rounded-social-buttons">
-              <a id="youtube-left" class="social-button youtube" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s" href="#">
+            <div id="social-media-url-left" class="rounded-social-buttons d-inline">
+              <a id="youtube-left" class="social-button youtube" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s">
               </a>
               <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
                 <div class="modal-dialog">
@@ -206,15 +210,17 @@
                         <div class="modal-body">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                     <div>
-                                         <iframe width="100%" height="350" src=""></iframe>
+                                         <iframe id="topArtistYURL" width="100%" height="350" src=""></iframe>
                                       </div>
                            </div>
                       </div>
                   </div>
               </div> 
             </div>
-              
-            <div id="social-media-url" class="rounded-social-buttons">
+            <div class="f-flex d-inline-block align-item-center mx-auto">
+            <img id="topAlbum" class="mr-0" alt="Artist's top album." src="">
+          </div>
+            <div id="social-media-url" class="rounded-social-buttons d-inline">
               <a class="social-button facebook" href="#"></a>
               <a class="social-button twitter" href="#"></a>
               
@@ -222,7 +228,7 @@
               
             </div>
           </div> 
-<!--reference for the Youtube icon. Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
+    <!--reference for the Youtube icon. Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
 
       <!-- program modal with embedded youtube clip here-->
 
@@ -286,14 +292,7 @@
 
       
 
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © 2019</span>
-          </div>
-        </div>
-      </footer>
+      
     </div><!--/container-fluid-->
   </div><!--/container-wrapper-->
     </div>
@@ -301,6 +300,19 @@
 
   </div>
   <!-- /#wrapper -->
+</div>
+</div>
+
+<!-- Sticky Footer -->
+<footer class="sticky-footer">
+  <div class="container my-auto">
+    <div class="copyright text-center my-auto">
+      <span>Copyright © 2019</span>
+    </div>
+  </div>
+</footer>
+
+</div>
 
 
 
