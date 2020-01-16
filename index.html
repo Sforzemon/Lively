@@ -10,10 +10,10 @@
   <meta name="author" content="Michael">
 
   <title>Lively/Band Info</title>
-
+  <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Custom styles for this template-->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  
 
 </head>
 
@@ -24,7 +24,7 @@
     </button>
 
     <!-- Navbar Search -->
-    <form class="d-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <form class="d-inline-block form-inline ml-auto mr-3 align-middle">
       <div class="input-group">
         <input type="text" id="getArtistName" class="form-control" placeholder="Pick a band..." aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
@@ -41,7 +41,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="sidebar navbar-nav d-none d-md-block ">
+    <ul class="sidebar navbar-nav d-none d-md-block ml-0">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="favoritesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-heart"></i>
@@ -57,55 +57,127 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
+        <h3>Top Tracks</h3>
         <!-- Icon Cards-->
         <div class="row">
           <div class="col-12 col-md-4 mb-3">
             <div class="card o-hidden h-100" id="bgGold">
-              <div class="card-body">sdfsf
-                <div class="card-body-icon">
+              <div class="card-body">
+                <div class=" oneTrack">sdfsfsklfjhlskjhflksjhsdflkasjhfkjsbkjaksljdfhlksjhflkjbsalkjfhglksjgblkjBGKJbflfjdb</div>
+                <div class="card-body-icon z-2">
                     <i class="fas fa-trophy"></i>
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+              <a class="card-footer clearfix small z-1" href="#goldModal" data-toggle="modal"><!--Make a modal here-->
                 <span class="float-left">Most Played Track!</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
               </a>
+                  <div class="modal fade" id="goldModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h3 class="modal-title">This song has been played:</h3>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        
+                        <!-- Modal body -->
+                        <div class="modal-body oneScrobble">
+                          Modal body..
+                        </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
             </div>
           </div>
           <div class="col-12 col-md-4 mb-3">
             <div class="card o-hidden h-100" id="bgSilver">
               <div class="card-body">
+                <div class="twoTrack"></div>
                 <div class="card-body-icon">
                     <i class="fas fa-trophy"></i>
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
+              <a class="card-footer clearfix small z-1" href="#silverModal" data-toggle="modal"><!--Make a modal here-->
                 <span class="float-left">A Close Second.</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
               </a>
+              <div class="modal fade" id="silverModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h3 class="modal-title">This song has been played:</h3>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body twoScrobble">
+                      Modal body..
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-12 col-md-4 mb-3">
             <div class="card o-hidden h-100" id="bgBronze">
               <div class="card-body">
+                <div class="threeTrack"></div>
                 <div class="card-body-icon">
                     <i class="fas fa-trophy"></i>
                 </div>
                 <div class="mr-5"></div>
               </div>
-              <a class="card-footer text-black clearfix small z-1" href="#"><!--Make a modal here-->
-                <span class="float-left">A Distant Third...</span>
+              <a class="card-footer clearfix small z-1" href="#bronzeModal" data-toggle="modal"><!--Make a modal here-->
+                <span class="float-left Scrobble">A Distant Third...</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
               </a>
+              <div class="modal fade" id="bronzeModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h3 class="modal-title">This song has been played:</h3>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body threeScrobble">
+                      Modal body..
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
          
@@ -113,7 +185,7 @@
 
         <!-- Band Info-->
         <div class="row"></div>
-        <div class="card mb-3 mx-auto mt-3 col-10">
+        <div class="card mb-3 mx-auto mt-3 col-10 px-0">
           <div class="card-header" id="bandName">
             <button class="btn btn-outline-dark rounded-circle mr-3 d-inline-top" type="button"> <!--Program save to local Storage-->
               <i class="fas fa-heart"></i>
@@ -165,7 +237,7 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
+        <h3>Similar Artists</h3>
         <!-- Icon Cards-->
         <div class="row">
           <div class="col-12 col-md-4 mb-3">
@@ -216,8 +288,7 @@
               </a>
             </div>
           </div>
-        </div><!--container-fluid-->
-      </div><!--container-wrapper-->
+
 
       
 
@@ -229,7 +300,8 @@
           </div>
         </div>
       </footer>
-
+    </div><!--container-fluid-->
+  </div><!--container-wrapper-->
     </div>
     <!-- /.content-wrapper -->
 

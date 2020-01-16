@@ -28,23 +28,37 @@ $( document ).ready(function() {
 
 
     function getBand() {
-        var lastFMURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        $.ajax({
-            url: lastFMURL,
+        var lastFMURLbio = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        
+        var lastFMURLTopTracks = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
+        $.ajax({
+            url: lastFMURLbio,
             method: "GET"
         }).then(function(response) {
-            var recentSearch = {
-                bandName: response.artist.name,
-                id: response.artist.stats.listeners
-            }
             $("h4").remove();
             var theBand = $("<h4>", {"class": "ml-2 d-inline-block my-auto"});
-           
             $("#bandName").append(theBand)
             theBand.empty()
-            theBand.text(recentSearch.bandName);
-            $("#bandBio").text(response.artist.bio.content)
-            console.log(response.artist.name)
-            console.log(response.artist.bio.content)
+            theBand.text(response.artist.name);
+            $("#bandBio").text(response.artist.bio.content);
+            console.log(response.artist.name);
+            console.log(response.artist.bio.content);
+            $.ajax({
+                url: lastFMURLTopTracks,
+                method: "GET"
+            }).then(function(response) {
+                var trackGold = response.toptracks.track[0].name;
+                var scrobblesOne = response.toptracks.track[0].playcount;
+                var trackSilver = response.toptracks.track[1].name;
+                var scrobblesTwo = response.toptracks.track[1].playcount;
+                var trackBronze = response.toptracks.track[2].name;
+                var scrobblesThree = response.toptracks.track[2].playcount;
+                $(".oneTrack").text(trackGold);
+                $(".oneScrobble").text (scrobblesOne + " times!");
+                $(".twoTrack").text(trackSilver);
+                $(".twoScrobble").text (scrobblesTwo + " times!");
+                $(".threeTrack").text(trackBronze);
+                $(".threeScrobble").text (scrobblesThree + " times!");
+            });
         });
     };
 });
