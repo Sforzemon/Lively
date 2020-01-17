@@ -1,14 +1,15 @@
 
 $( document ).ready(function() {
-    
+   // Setting the varible for the locale storage 
     var artistName = "";
     var savedSearches = [];
+    // Grabbing items from locale storage
         if (localStorage.getItem('savedSearches') !== null) {
             savedSearches = JSON.parse(localStorage.getItem('savedSearches'));
               
         } 
     
-
+    // Allows user to press enter to see search results
     $(document).on('keypress',function(event) {
         if(event.which == 13) {
             event.preventDefault();
@@ -16,6 +17,7 @@ $( document ).ready(function() {
             getBand();
         }
     });
+    // click listener for the saved artist 
     $(document).on('click', '.dropdown-item', function(event){
         event.preventDefault();
         // artistName = $('#getArtistName').val().trim();
@@ -27,19 +29,20 @@ $( document ).ready(function() {
         
 
     });
+    // click listener for the search 
     $("#topNavSearch").on("click", function(event) {
         event.preventDefault();
         artistName = $("#getArtistName").val().trim();
         getBand();
     });
-
+    // click to save artist searched 
     $("#loveThisBand").on("click", function(e) {
         e.preventDefault();
         console.log($(this));
         myFavorites()
     });
 
-
+    // function for saved search
     function myFavorites() {
         var loveTheseGuys = $("#bandName").text
         var favoriteBands = {
@@ -53,7 +56,7 @@ $( document ).ready(function() {
         addFav();
       
     }
-
+    // function for the artist selected in the favorited artist menu
     function addFav() {
 
         $(".dropdown-menu").empty();
@@ -65,6 +68,7 @@ $( document ).ready(function() {
         }
 
     }
+    
     $(window).on('load', function(event){
         event.preventDefault();
         addFav();
@@ -80,7 +84,7 @@ $( document ).ready(function() {
    
     })
 
-
+    // Gets band info with 5 api 
     function getBand() {
         var lastFMURLbio = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        
         var lastFMURLTopTracks = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
@@ -160,6 +164,7 @@ $( document ).ready(function() {
         });
     };
 });
+// giph will be implemented in a later build 
 function getGiphy(){
     artistName = $("#getArtistName").val().trim();
     var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=UyP7yHq6GHhRpGn3p7vtXmNOnjY2UMXT";
