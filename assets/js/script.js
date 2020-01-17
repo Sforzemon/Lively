@@ -27,24 +27,31 @@ $( document ).ready(function() {
     });
 
 
-    // function myFavorites() {
-    //     var loveTheseGuys = $("#bandName").text
-    //     var favoriteBands = {
-    //         name: loveTheseGuys,
-    //         value: ""
-    //     }
-    //     console.log(loveTheseGuys)
-    //     console.log(favoriteBands)
-    //     savedSearches.unshift(favoriteBands)
-    //     localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
-    //     $(".dropdown-header").empty();
-    //     for (i=0; i<savedSearches.length; i++) {
-    //         var newAnchor = $("<a>", {"class": "dropdown-item"})
-    //         $(".dropdown-header").append(newAnchor);
-    //         newAnchor.text(savedSearches[i]);
-    //     }
-    // }
+    function myFavorites() {
+        var loveTheseGuys = $("#bandName").text
+        var favoriteBands = {
+            name: loveTheseGuys,
+            value: ""
+        }
+        console.log(loveTheseGuys)
+        console.log(favoriteBands)
+        savedSearches.unshift(favoriteBands)
+        localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
+        $(".dropdown-header").empty();
+        for (i=0; i<savedSearches.length; i++) {
+            var newAnchor = $("<a>", {"class": "dropdown-item"})
+            $(".dropdown-header").append(newAnchor);
+            newAnchor.text(savedSearches[i]);
+        }
+    }
 
+
+    $(document).on("click", ".anotherArtist", function(event) {
+        event.preventDefault();
+        artistName = $(this).siblings().children("h3").text();
+        getBand();
+        console.log($(this).siblings().children("h3").text())    
+    })
 
 
     function getBand() {
@@ -103,13 +110,6 @@ $( document ).ready(function() {
                         var albumImg = response.album.image[2]["#text"];
                         $("#topAlbum").attr("src", albumImg)
                         console.log(albumImg)
-                        // document.querySelector("#kvov2 > span.blockInner > span:nth-child(3) > span.blockInner > span:nth-child(1) > span.s > span > a")
-                        $.ajax({
-                            url: tasteURL,
-                            crossOrigin: true,
-                            dataType: "jsonp",
-                            method: "GET"
-                        }).then(
                             $.ajax({
                                 url: tasteURL,
                                 crossOrigin: true,
@@ -120,29 +120,32 @@ $( document ).ready(function() {
                                 var similarArtistTwo = response.Similar.Results[1].Name;
                                 var similarArtistThree = response.Similar.Results[2].Name;
                                 var mainSearchArtistYURL = response.Similar.Info[0].yUrl;
-                                    $("#youtube-left").attr("data-theVideo", "mainSearchArtistYURL");
-                                console.log(response.Similar)
-                                function getGiphy(){
-                                    artistName = $("#getArtistName").val().trim();
-                                    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=UyP7yHq6GHhRpGn3p7vtXmNOnjY2UMXT";
-                                    $.ajax({
-                                        url: giphyURL,
-                                        method: "GET"
-                                    }).then(function(data){
-                                        
-                                        console.log(data);
-                                        
-                                    })
-                                }
-
-                            }));
+                                    $("#youtube-left").attr("data-theVideo", mainSearchArtistYURL);
+                                console.log(response.Similar.Info[0].yUrl)  
+                                $(".similarArtistOne").text(similarArtistOne)
+                                $(".similarArtistTwo").text(similarArtistTwo)
+                                $(".similarArtistThree").text(similarArtistThree)
+                            })
+                        });
                 
                 });
             });
         });
-    });
-};
+    };
 });
+function getGiphy(){
+    artistName = $("#getArtistName").val().trim();
+    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=UyP7yHq6GHhRpGn3p7vtXmNOnjY2UMXT";
+    $.ajax({
+        url: giphyURL,
+        method: "GET"
+    }).then(function(data){
+        
+        console.log(data);
+        
+    })
+}
+
 
 autoPlayYouTubeModal();
 
