@@ -95,9 +95,9 @@ $( document ).ready(function() {
 
     // Gets band info with 5 api 
     function getBand() {
-        var lastFMURLbio = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        
-        var lastFMURLTopTracks = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
-        var lastFMURLTopAlbum = "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
+        var lastFMURLbio = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        
+        var lastFMURLTopTracks = "https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
+        var lastFMURLTopAlbum = "https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
         var tasteURL = "https://tastedive.com/api/similar?q=" + artistName + "&k=353205-Lively-TT1A0QYZ&verbose=1"
         $(".facebook").attr("href", "https://www.facebook.com/search/pages/?q=" + artistName);
         $(".twitter").attr("href", "https://twitter.com/search?q=" + artistName);
@@ -144,7 +144,7 @@ $( document ).ready(function() {
                     method: "GET"
                 }).then(function(response) {
                     var albumName = response.topalbums.album[0].name;
-                    var lastFMURLAlbumInfo = "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=" + artistName + "&album=" + albumName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json"
+                    var lastFMURLAlbumInfo = "https://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=" + artistName + "&album=" + albumName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json"
                     console.log(response.topalbums.album[0].name)
                     $.ajax({
                         url: lastFMURLAlbumInfo,
@@ -179,7 +179,7 @@ $( document ).ready(function() {
 // giph will be implemented in a later build 
 function getGiphy(){
     artistName = $("#getArtistName").val().trim();
-    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=UyP7yHq6GHhRpGn3p7vtXmNOnjY2UMXT";
+    var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=UyP7yHq6GHhRpGn3p7vtXmNOnjY2UMXT";
     $.ajax({
         url: giphyURL,
         method: "GET"
