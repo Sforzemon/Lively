@@ -468,23 +468,6 @@ footer.sticky-footer .copyright {
   border-color: #32506d;
 }
 
-
-#social-media-url{
-  top: 0;
-  right: 0;
-  position: absolute;  
-}
-#social-media-url-left{
-  float: left;
-  display: flex;
-}
-
-.img{
-  margin-left: auto;
-  margin-right: auto;
-  width: 174px;
-} 
-
 #mainCardFooter{
   margin-bottom: 0;
   position: relative;
