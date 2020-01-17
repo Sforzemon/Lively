@@ -35,6 +35,7 @@ $( document ).ready(function() {
 
     $("#loveThisBand").on("click", function(e) {
         e.preventDefault();
+        console.log($(this));
         myFavorites()
     });
 
@@ -43,10 +44,10 @@ $( document ).ready(function() {
         var loveTheseGuys = $("#bandName").text
         var favoriteBands = {
             name: loveTheseGuys,
-            value: $('#getArtistName').val()
+            value: $('h4').text()
         }
         
-        console.log($('h4').text)
+        console.log($('h4').text())
         savedSearches.unshift(favoriteBands)
         localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
         addFav();
@@ -76,7 +77,7 @@ $( document ).ready(function() {
         event.preventDefault();
         artistName = $(this).siblings().children("h3").text();
         getBand();
-        console.log($(this).siblings().children("h3").text())    
+   
     })
 
 
