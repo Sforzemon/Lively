@@ -276,16 +276,21 @@ footer.sticky-footer .copyright {
 }
 
 #bg1{
+  color: white;
   background-color: #199898;
 }
 #bg2{
+  color: white;
   background-color: #199898;
 }
 #bg3{
+  color: white;
   background-color: #199898;
 }
 
 #bandBio {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:  #2687e2;
   display: inline-block;
   overflow: auto;
 }
