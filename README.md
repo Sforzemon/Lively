@@ -17,3 +17,4 @@ This application works by having the user enter a artist name and Lively makes 5
 
 
 
+![alt test](assets/images/Lively.png)
