@@ -1,14 +1,15 @@
 
 $( document ).ready(function() {
-    
+    var initialArtistArray = ['Adele' , 'blink-182', 'Lana Del Rey', 'Ninja Sex Party', '"Weird Al” Yankovic', 'Max Richter', 'Eminem', 'Sizzla', 'Sonu Nigam', 'Young Thug', 'R. D. Burman', 'slayer', 'rush', '雅-miyavi-', 'Johnny cash'];
+   // Setting the varible for the locale storage 
     var artistName = "";
     var savedSearches = [];
+    // Grabbing items from locale storage
         if (localStorage.getItem('savedSearches') !== null) {
-            savedSearches = JSON.parse(localStorage.getItem('savedSearches'));
-              
+            savedSearches = JSON.parse(localStorage.getItem('savedSearches'));      
         } 
     
-
+    // Allows user to press enter to see search results
     $(document).on('keypress',function(event) {
         if(event.which == 13) {
             event.preventDefault();
@@ -16,6 +17,7 @@ $( document ).ready(function() {
             getBand();
         }
     });
+    // click listener for the saved artist 
     $(document).on('click', '.dropdown-item', function(event){
         event.preventDefault();
         // artistName = $('#getArtistName').val().trim();
@@ -23,47 +25,54 @@ $( document ).ready(function() {
         artistName = $(this).text();
         console.log(artistName);
         getBand();
-
-        
-
     });
+
+    // click listener for the search 
     $("#topNavSearch").on("click", function(event) {
         event.preventDefault();
         artistName = $("#getArtistName").val().trim();
         getBand();
     });
-
+    // click to save artist searched 
     $("#loveThisBand").on("click", function(e) {
         e.preventDefault();
+        console.log($(this));
         myFavorites()
     });
 
-
+    // function for saved search
     function myFavorites() {
-        var loveTheseGuys = $("#bandName").text
+        var loveTheseGuys = $('h4').text()
         var favoriteBands = {
             name: loveTheseGuys,
-            value: $('#getArtistName').val()
+            value: $('h4').text()
         }
         
-        console.log($('h4').text)
+        console.log($('h4').text())
         savedSearches.unshift(favoriteBands)
         localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
         addFav();
       
     }
-
+    // function for the artist selected in the favorited artist menu
     function addFav() {
-
-        $(".dropdown-menu").empty();
+        if (savedSearches.length == 0){
+            console.log("saved searches is 0")
+            randoStartup();
+        }
+        else { $("#putFavoritesHere").find('*').not('.dropdown-header').remove();
         for (i=0; i<savedSearches.length; i++) {
             var newAnchor = $("<a>", {"class": "dropdown-item"})
-            $(".dropdown-menu").append(newAnchor);
+            $("#putFavoritesHere").append(newAnchor);
             newAnchor.text(savedSearches[i].value);
-           
+            console.log("add dem divs... well anchors")
+        } 
+        artistName = savedSearches[0].name;
+        getBand();  
         }
 
     }
+    
     $(window).on('load', function(event){
         event.preventDefault();
         addFav();
@@ -76,15 +85,23 @@ $( document ).ready(function() {
         event.preventDefault();
         artistName = $(this).siblings().children("h3").text();
         getBand();
-        console.log($(this).siblings().children("h3").text())    
+   
     })
 
+    function randoStartup() {
+        artistName = initialArtistArray[Math.floor(Math.random()*initialArtistArray.length)];
+        getBand()
+    }
 
+    // Gets band info with 5 api 
     function getBand() {
         var lastFMURLbio = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";        
         var lastFMURLTopTracks = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
         var lastFMURLTopAlbum = "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + artistName + "&api_key=7ee5b384da21658ce5fd68901750d490&format=json";
         var tasteURL = "https://tastedive.com/api/similar?q=" + artistName + "&k=353205-Lively-TT1A0QYZ&verbose=1"
+        $(".facebook").attr("href", "https://www.facebook.com/search/pages/?q=" + artistName);
+        $(".twitter").attr("href", "https://twitter.com/search?q=" + artistName);
+        $(".instagram").attr("href", "https://www.instagram.com/explore/tags/" + artistName);
         $.ajax({
             url: lastFMURLbio,
             method: "GET"
@@ -159,6 +176,7 @@ $( document ).ready(function() {
         });
     };
 });
+// giph will be implemented in a later build 
 function getGiphy(){
     artistName = $("#getArtistName").val().trim();
     var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + artistName + "&api_key=UyP7yHq6GHhRpGn3p7vtXmNOnjY2UMXT";
