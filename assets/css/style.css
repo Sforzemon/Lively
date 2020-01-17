@@ -470,11 +470,23 @@ footer.sticky-footer .copyright {
 
 
 #social-media-url{
-  float: right;
-  display: flex;
+  top: 0;
+  right: 0;
+  position: absolute;  
 }
 #social-media-url-left{
   float: left;
   display: flex;
+}
+
+.img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 174px;
+} 
+
+#mainCardFooter{
+  margin-bottom: 0;
+  position: relative;
 }
 /* End of Foundation Framework Buttons */
