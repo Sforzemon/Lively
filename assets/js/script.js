@@ -4,7 +4,8 @@ $( document ).ready(function() {
     var artistName = "";
     var savedSearches = [];
         if (localStorage.getItem('savedSearches') !== null) {
-            savedSearches = JSON.parse(localStorage.getItem('savedSearches'));  
+            savedSearches = JSON.parse(localStorage.getItem('savedSearches'));
+              
         } 
     
 
@@ -14,6 +15,17 @@ $( document ).ready(function() {
             artistName = $("#getArtistName").val().trim();
             getBand();
         }
+    });
+    $(document).on('click', '.dropdown-item', function(event){
+        event.preventDefault();
+        // artistName = $('#getArtistName').val().trim();
+
+        artistName = $(this).text();
+        console.log(artistName);
+        getBand();
+
+        
+
     });
     $("#topNavSearch").on("click", function(event) {
         event.preventDefault();
@@ -31,19 +43,33 @@ $( document ).ready(function() {
         var loveTheseGuys = $("#bandName").text
         var favoriteBands = {
             name: loveTheseGuys,
-            value: ""
+            value: $('#getArtistName').val()
         }
-        console.log(loveTheseGuys)
-        console.log(favoriteBands)
+        
+        console.log($('h4').text)
         savedSearches.unshift(favoriteBands)
         localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
-        $(".dropdown-header").empty();
+        addFav();
+      
+    }
+
+    function addFav() {
+
+        $(".dropdown-menu").empty();
         for (i=0; i<savedSearches.length; i++) {
             var newAnchor = $("<a>", {"class": "dropdown-item"})
-            $(".dropdown-header").append(newAnchor);
-            newAnchor.text(savedSearches[i]);
+            $(".dropdown-menu").append(newAnchor);
+            newAnchor.text(savedSearches[i].value);
+           
         }
+
     }
+    $(window).on('load', function(event){
+        event.preventDefault();
+        addFav();
+        // console.log('string');
+    })
+
 
 
     $(document).on("click", ".anotherArtist", function(event) {
