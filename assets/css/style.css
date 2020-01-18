@@ -275,17 +275,26 @@ footer.sticky-footer .copyright {
   background-color: #cd7f32;
 }
 
-#bg1{
+/* #bg1{
+  color: white;
   background-color: #199898;
 }
 #bg2{
+  color: white;
   background-color: #199898;
 }
 #bg3{
+  color: white;
   background-color: #199898;
+} */
+#bg1,#bg2,#bg3{
+  opacity: 0.7;
+  color: white;
+  background-color:#199898 ;
 }
 
 #bandBio {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: inline-block;
   overflow: auto;
 }

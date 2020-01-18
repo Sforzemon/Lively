@@ -165,6 +165,7 @@ $( document ).ready(function() {
                                 var mainSearchArtistYURL = response.Similar.Info[0].yUrl;
                                     $("#youtube-left").attr("data-theVideo", mainSearchArtistYURL);
                                 console.log(response.Similar.Info[0].yUrl)  
+                                console.log(response)
                                 $(".similarArtistOne").text(similarArtistOne)
                                 $(".similarArtistTwo").text(similarArtistTwo)
                                 $(".similarArtistThree").text(similarArtistThree)
